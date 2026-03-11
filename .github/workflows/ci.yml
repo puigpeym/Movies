@@ -2,7 +2,7 @@ name: Java Maven Build
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "Ejercicio2" ]
 
 jobs:
   build:
@@ -21,9 +21,11 @@ jobs:
 
       - name: Compilar y empaquetar
         run: mvn clean package
-       
+        
       - name: Upload Artifact
-        run: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4 
+        if: failure()
         with:
             name: artefacto_pruebas
             path: target/
+            
