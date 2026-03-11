@@ -17,7 +17,7 @@ public class MovieBrowserApp {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
             // Use default look and feel
-        }
+        
 
         // Launch UI on Event Dispatch Thread
         SwingUtilities.invokeLater(() -> {
